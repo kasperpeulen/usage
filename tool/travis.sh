@@ -22,18 +22,18 @@ dart -c test/all.dart
 #pub run grinder:test build/test/web.html
 
 # Verify against DDC.
-pub global activate dev_compiler
-pub global run dev_compiler lib/usage_html.dart
+# pub global activate dev_compiler
+# pub global run dev_compiler lib/usage_html.dart
 
 # Measure the size of the compiled JS, for the dart:html version of the library.
-dart tool/grind.dart build
+# dart tool/grind.dart build
 
 # Install dart_coveralls; gather and send coverage data.
-if [ "$REPO_TOKEN" ]; then
-  pub global activate dart_coveralls
-  pub global run dart_coveralls report \
-    --token $REPO_TOKEN \
-    --retry 2 \
-    --exclude-test-files \
-    test/all.dart
-fi
+# if [ "$REPO_TOKEN" ]; then
+#   pub global activate dart_coveralls
+#   pub global run dart_coveralls report \
+#     --token $REPO_TOKEN \
+#     --retry 2 \
+#     --exclude-test-files \
+#     test/all.dart
+# fi
